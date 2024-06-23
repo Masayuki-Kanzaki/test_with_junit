@@ -1,29 +1,38 @@
 package mypackage;
 
 public class Paint {
-    double v;
-    int r;
-    int y;
-    int b;
+    double volume;
+    int red;
+    int yellow;
+    int blue;
     Paint(double v, int r, int y, int b) {
-        this.v = v;
-        this.r = r;
-        this.y = y;
-        this.b = b;
+        this.volume = v;
+        this.red = r;
+        this.yellow = y;
+        this.blue = b;
     }
-    public void paint(Paint paint) {
-        v = v + paint.getV();
+    public void mixIn(Paint paint) {
+        volume = volume + paint.getVolume();
+
+        double ratio = paint.getVolume() / volume;
+
+        mixedWith(paint, ratio);
     }
-    public double getV() {
-        return v;
+    public double getVolume() {
+        return volume;
     }
-    public int getR() {
-        return r;
+    public int getRed() {
+        return red;
     }
-    public int getY() {
-        return y;
+    public int getYellow() {
+        return yellow;
     }
-    public int getB() {
-        return b;
+    public int getBlue() {
+        return blue;
+    }
+    public void mixedWith(Paint paint, double ratio) {
+        red    = (int) (red    * ratio + paint.getRed()    * ratio);
+        yellow = (int) (yellow * ratio + paint.getYellow() * ratio);
+        blue   = (int) (blue   * ratio + paint.getBlue()   * ratio);
     }
 }

@@ -8,14 +8,14 @@ class PaintTest {
 
     @Test
     void paint() {
-        Paint yellow = new Paint(100.0, 0, 50, 0);
-        Paint blue   = new Paint(100.0, 0, 0, 50);
+        Paint ourPaint = new Paint(100.0, 0, 50, 0);
+        Paint blue     = new Paint(100.0, 0, 0, 50);
 
-        yellow.paint(blue);
+        ourPaint.mixIn(blue);
 
-        assertEquals(200.0,yellow.getV(), 0.01);
-        assertEquals(0,yellow.getR());
-        assertEquals(25,yellow.getY());
-        assertEquals(25,yellow.getB());
+        assertEquals(200.0, ourPaint.getVolume(), 0.01);
+        assertEquals(0, ourPaint.getRed());
+        assertEquals(25, ourPaint.getYellow());
+        assertEquals(25, ourPaint.getBlue());
     }
 }
