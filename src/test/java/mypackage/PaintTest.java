@@ -14,8 +14,8 @@ class PaintTest {
         yellow.paint(blue);
 
         assertEquals(200.0,yellow.getV(), 0.01);
-        assertEquals(25,yellow.getR());
-        assertEquals(25,yellow.getY());
+        assertEquals(0,yellow.getR());
+        assertEquals(50,yellow.getY());
         assertEquals(0,yellow.getB());
     }
 }
