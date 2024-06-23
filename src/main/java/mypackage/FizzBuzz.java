@@ -8,9 +8,16 @@ public class FizzBuzz {
     }
 
     public static String fizzBuzz(int i) {
+        String result = "";
         if (i % 3 == 0) {
-            return "Fizz";
+            result += "Fizz";
         }
-        return null;
+        if (i % 5 == 0) {
+            result += "Buzz";
+        }
+        if (i % 3 != 0 && i % 5 != 0) {
+            result += i;
+        }
+        return result;
     }
 }
